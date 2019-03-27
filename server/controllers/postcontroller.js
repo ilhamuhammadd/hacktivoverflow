@@ -25,7 +25,6 @@ class PostController {
             .catch(err=>{
                 res.status(500).json({message: 'Invalid Token!'})
             })
-
     }
 
     static findAll(req, res) {

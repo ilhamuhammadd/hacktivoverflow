@@ -123,7 +123,12 @@
                     v-on:click.prevent="login"
                     class="btn btn-primary"
                     data-dismiss="modal"
-                  >Save changes</button>
+                  >Login</button>
+                  <button
+                    v-on:click.prevent="register"
+                    class="btn btn-primary"
+                    data-dismiss="modal"
+                  >Register</button>
                 </div>
               </form>
             </div>
@@ -171,6 +176,30 @@ export default {
   //       ...mapState(['title','email', 'password'])
   //   },
   methods: {
+
+    register() {
+      local
+        .post("/user/signup", { email: this.email, password: this.password})
+        .then(response=>{
+          this.email = "",
+          this.password = ""
+          Swal.fire({
+            position: 'top-center',
+            type: 'success',
+            title: 'Register is succes',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
+        .catch(err=>{
+          Swal.fire({
+            type: 'error',
+            title: 'Oops..',
+            text: 'Something went wrong',
+            footer: "<a href>Why do I have this issue?</a>"
+          })
+        })
+    },
     login() {
       // console.log(this.$store.state.email);
       // console.log("masok");

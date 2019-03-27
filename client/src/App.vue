@@ -1,15 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <!-- <router-link to="/">Home</router-link> | -->
-      <!-- <router-link to="/about">About</router-link> -->
       <NavBar />
     </div>
-    <!-- <Post /> -->
     <router-view/>
-    <!-- <h1>{{username}}</h1>
-
-    <p>{{password}}</p> -->
   </div>
 </template>
 

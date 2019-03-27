@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const PostController = require('../controllers/postcontroller')
 const AnswerController = require('../controllers/answercontroller')
+// const Authenticate = require('../middlewares/authenticate')
 
 
 router.get('/posting', PostController.findAll )
